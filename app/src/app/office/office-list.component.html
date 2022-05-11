@@ -1,0 +1,35 @@
+<h2>offices List</h2>
+<table mat-table [dataSource]="offices$" class="mat-elevation-z8">
+  <!-- Street Column -->
+  <ng-container matColumnDef="street">
+    <th mat-header-cell *matHeaderCellDef>Street</th>
+    <td mat-cell *matCellDef="let element">{{ element.street }}</td>
+  </ng-container>
+
+  <!-- Street Number Column -->
+  <ng-container matColumnDef="streetNumber">
+    <th mat-header-cell *matHeaderCellDef>Street Number</th>
+    <td mat-cell *matCellDef="let element">{{ element.streetNumber }}</td>
+  </ng-container>
+
+  <!-- Postcode Column -->
+  <ng-container matColumnDef="postcode">
+    <th mat-header-cell *matHeaderCellDef>Postcode</th>
+    <td mat-cell *matCellDef="let element">{{ element.postcode }}</td>
+  </ng-container>
+
+  <!-- City Column -->
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef>City</th>
+    <td mat-cell *matCellDef="let element">{{ element.city }}</td>
+  </ng-container>
+
+  <!-- Country Column -->
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef>Country</th>
+    <td mat-cell *matCellDef="let element">{{ element.country }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
